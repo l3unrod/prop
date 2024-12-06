@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg main_menu">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('home') }}">
+         <a class="navbar-brand" href="https://chaixi.co.th/newweb/">
             <img src="{{ asset('frontend/images/logo.png') }}" alt="FoodPark" class="w-50">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -12,35 +12,17 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('home') }}">หน้าแรก</a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link" href="{{ route('contact.index') }}">ติดต่อเรา</a>
-                </li> --}}
             </ul>
             <ul class="menu_icon d-flex flex-wrap">
-                {{-- <li>
-                    <a href="#" class="menu_search"><i class="far fa-search"></i></a>
-                    <div class="fp__search_form">
-                        <form>
-                            <span class="close_search"><i class="far fa-times"></i></span>
-                            <input type="text" placeholder="Search . . .">
-                            <button type="submit">search</button>
-                        </form>
-                    </div>
-                </li> --}}
-                {{-- <li>
-                    <a class="cart_icon"><i class="fas fa-shopping-basket"></i> <span>5</span></a>
-                </li>
+                <!-- ปรับพื้นหลังปุ่มเป็น #f4cf15 -->
                 <li>
-                    <a href="{{ route('login') }}"><i class="fas fa-user"></i></a>
-                </li> --}}
-                {{-- <li>
-                    <a class="common_btn" href="#" data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop">reservation</a>
-                </li> --}}
+                    <a href="http://127.0.0.1:8000/login" class="btn text-white" style="background-color: #f4cf15;">เข้าสู่ระบบ</a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
+
 
 <div class="fp__menu_cart_area">
     <div class="fp__menu_cart_boody">

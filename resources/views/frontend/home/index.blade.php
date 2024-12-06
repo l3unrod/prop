@@ -4,254 +4,259 @@
 @section('css')
 <style>
     /* Base styles (ค่าเริ่มต้นสำหรับทุกขนาดหน้าจอ) */
-    p {
-        color: black;
+p {
+    color: black; /* กำหนดสีตัวอักษรของข้อความทั้งหมดในแท็ก <p> เป็นสีดำ */
+}
+
+#header_mobile {
+    height: 10px; /* กำหนดความสูงขององค์ประกอบที่มี ID เป็น #header_mobile เป็น 10px */
+}
+
+#chili_mobile {
+    height: 150px; /* กำหนดความสูงขององค์ประกอบที่มี ID เป็น #chili_mobile เป็น 150px */
+}
+
+/* Extra Small Devices (น้อยกว่า 400px) */
+@media screen and (max-width: 399px) {
+    #header_mobile {
+        height: 138px; /* ถ้าหน้าจอมีความกว้างน้อยกว่า 400px จะปรับความสูงของ #header_mobile เป็น 138px */
     }
 
-    #header_mobile {
-        height: 10px;
+    #pork_mobile {
+        height: 35px; /* กำหนดความสูงของ #pork_mobile เป็น 35px */
     }
 
     #chili_mobile {
-        height: 150px;
+        height: 101px; /* กำหนดความสูงของ #chili_mobile เป็น 101px */
     }
 
-    /* Extra Small Devices (น้อยกว่า 400px) */
-    @media screen and (max-width: 399px) {
-
-        #header_mobile {
-            height: 138px;
-        }
-
-        #pork_mobile {
-            height: 35px;
-        }
-
-        #chili_mobile {
-            height: 101px;
-        }
-
-        #sauce_mobile {
-            height: 40px;
-        }
-
-        #input_total {
-            width: 10px;
-        }
-
+    #sauce_mobile {
+        height: 40px; /* กำหนดความสูงของ #sauce_mobile เป็น 40px */
     }
 
-    /* Small Mobile (400px - 475px) */
-    @media screen and (min-width: 400px) and (max-width: 475px) {
+    #input_total {
+        width: 10px; /* กำหนดความกว้างของ #input_total เป็น 10px */
+    }
+}
 
-        #header_mobile {
-            height: 138px;
-        }
-
-        #pork_mobile {
-            height: 24px;
-        }
-
-        #chili_mobile {
-            height: 100px;
-        }
-
-        #sauce_mobile {
-            height: 40px;
-        }
+/* Small Mobile (400px - 475px) */
+@media screen and (min-width: 400px) and (max-width: 475px) {
+    #header_mobile {
+        height: 138px; /* กำหนดความสูงของ #header_mobile เป็น 138px สำหรับหน้าจอขนาดเล็ก */
     }
 
-    /* Mobile (476px - 575px) */
-    @media screen and (min-width: 476px) and (max-width: 575px) {
-
-        #header_mobile {
-            height: 140px;
-        }
-
-        #pork_mobile {
-            height: 58px;
-        }
-
-        #chili_mobile {
-            height: 120px;
-        }
-
-        #sauce_mobile {
-            height: 60px;
-        }
+    #pork_mobile {
+        height: 24px; /* กำหนดความสูงของ #pork_mobile เป็น 24px */
     }
 
-    /* Small Devices/Tablets (576px - 767px) */
-    @media screen and (min-width: 576px) and (max-width: 767px) {
-
-        #header_mobile {
-            height: 160px;
-        }
-
-        #pork_mobile {
-            height: 65px;
-        }
-
-        #chili_mobile {
-            height: 138px;
-        }
-
-        #sauce_mobile {
-            height: 64px;
-        }
+    #chili_mobile {
+        height: 100px; /* กำหนดความสูงของ #chili_mobile เป็น 100px */
     }
 
-    /* Medium Devices/Tablets (768px - 991px) */
-    @media screen and (min-width: 768px) and (max-width: 991px) {
+    #sauce_mobile {
+        height: 40px; /* กำหนดความสูงของ #sauce_mobile เป็น 40px */
+    }
+}
 
-        #header_mobile {
-            height: 90px;
-        }
-
-        #chili_mobile {
-            height: 111px;
-        }
+/* Mobile (476px - 575px) */
+@media screen and (min-width: 476px) and (max-width: 575px) {
+    #header_mobile {
+        height: 140px; /* ปรับความสูงของ #header_mobile เป็น 140px */
     }
 
-    /* Desktop (992px - 1199px) */
-    @media screen and (min-width: 992px) and (max-width: 1199px) {
-
-        #header_mobile {
-            height: 65px;
-        }
-
-        #chili_mobile {
-            height: 63px;
-        }
+    #pork_mobile {
+        height: 58px; /* ปรับความสูงของ #pork_mobile เป็น 58px */
     }
 
-    /* Large Desktop (1200px ขึ้นไป) */
-    @media screen and (min-width: 1200px) {
-
-        #header_mobile {
-            height: 65px;
-        }
-
-        #chili_mobile {
-            height: 63px;
-        }
+    #chili_mobile {
+        height: 120px; /* ปรับความสูงของ #chili_mobile เป็น 120px */
     }
 
-    .date-alert-container {
-        display: flex;
-        align-items: center;
+    #sauce_mobile {
+        height: 60px; /* ปรับความสูงของ #sauce_mobile เป็น 60px */
+    }
+}
+
+/* Small Devices/Tablets (576px - 767px) */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    #header_mobile {
+        height: 160px; /* ปรับความสูงของ #header_mobile เป็น 160px สำหรับอุปกรณ์ขนาดเล็ก */
     }
 
-    .alert-text {
-        color: red;
-        margin-right: 5px;
-        display: none;
+    #pork_mobile {
+        height: 65px; /* ปรับความสูงของ #pork_mobile เป็น 65px */
     }
 
-    .date-text {
-        margin: 0;
+    #chili_mobile {
+        height: 138px; /* ปรับความสูงของ #chili_mobile เป็น 138px */
     }
 
-    .text-status-prop {
-        word-wrap: break-word;
-        /* ทำให้ข้อความขึ้นบรรทัดใหม่เมื่อเกินขอบ */
-        overflow-wrap: break-word;
+    #sauce_mobile {
+        height: 64px; /* ปรับความสูงของ #sauce_mobile เป็น 64px */
+    }
+}
+
+/* Medium Devices/Tablets (768px - 991px) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    #header_mobile {
+        height: 90px; /* ปรับความสูงของ #header_mobile เป็น 90px */
     }
 
-    @media (max-width: 767px) {
-        .fp__testimonial_page_1 {
-            margin-top: 80px !important;
-        }
+    #chili_mobile {
+        height: 111px; /* ปรับความสูงของ #chili_mobile เป็น 111px */
+    }
+}
+
+/* Desktop (992px - 1199px) */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    #header_mobile {
+        height: 65px; /* ปรับความสูงของ #header_mobile เป็น 65px สำหรับจอขนาดกลาง */
     }
 
-    @media screen and (max-width: 600px) {
-        table {
-            font-size: 14px;
-        }
+    #chili_mobile {
+        height: 63px; /* ปรับความสูงของ #chili_mobile เป็น 63px */
+    }
+}
 
-        th,
-        td {
-            padding: 5px;
-        }
-
-        .ingredient-name {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .percentage {
-            display: block;
-            font-size: 12px;
-            color: #666;
-        }
-
-        .header {
-            height: 60px;
-        }
+/* Large Desktop (1200px ขึ้นไป) */
+@media screen and (min-width: 1200px) {
+    #header_mobile {
+        height: 65px; /* ปรับความสูงของ #header_mobile เป็น 65px สำหรับจอขนาดใหญ่ */
     }
 
+    #chili_mobile {
+        height: 63px; /* ปรับความสูงของ #chili_mobile เป็น 63px */
+    }
+}
+
+/* เพิ่มการแสดงผลของข้อความใน Alert */
+.date-alert-container {
+    display: flex; /* ทำให้ข้อความใน .date-alert-container แสดงในรูปแบบ flex */
+    align-items: center; /* จัดตำแหน่งให้อยู่กึ่งกลางในแนวตั้ง */
+}
+
+.alert-text {
+    color: red; /* สีตัวอักษรเป็นสีแดง */
+    margin-right: 5px; /* เว้นระยะด้านขวาของข้อความ */
+    display: none; /* ซ่อนข้อความนี้โดยค่าเริ่มต้น */
+}
+
+.date-text {
+    margin: 0; /* ลบระยะห่างจากข้อความใน .date-text */
+}
+
+.text-status-prop {
+    word-wrap: break-word; /* ทำให้ข้อความขึ้นบรรทัดใหม่เมื่อข้อความเกินขอบ */
+    overflow-wrap: break-word; /* ทำให้ข้อความไม่ล้นออกจากกรอบ */
+}
+
+/* การปรับขนาดข้อความในหน้าเว็บมือถือ */
+@media (max-width: 767px) {
+    .fp__testimonial_page_1 {
+        margin-top: 80px !important; /* เพิ่มระยะห่างด้านบนของ .fp__testimonial_page_1 สำหรับหน้าจอเล็ก */
+    }
+}
+
+/* การปรับขนาดตารางและตัวอักษรในอุปกรณ์ขนาดเล็ก */
+@media screen and (max-width: 600px) {
     table {
-        /* border-collapse: collapse; */
-
-        /* margin: 20px auto; */
+        font-size: 14px; /* กำหนดขนาดตัวอักษรในตารางเป็น 14px */
     }
 
-    #tableOne {
-        /* border-collapse: collapse;
-        margin: 20px auto; */
-        width: 100%;
-        max-width: 800px;
+    th, td {
+        padding: 5px; /* เพิ่มระยะห่างภายในเซลล์ตาราง */
     }
 
-    th,
-    td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: center;
-        width: 100px;
+    .ingredient-name {
+        display: block; /* ทำให้ชื่อส่วนผสมแสดงในบรรทัดใหม่ */
+        font-weight: bold; /* ทำให้ชื่อส่วนผสมตัวหนา */
+        margin-bottom: 5px; /* เพิ่มระยะห่างด้านล่าง */
     }
 
-    th {
-        background-color: #f2f2f2;
+    .percentage {
+        display: block; /* ทำให้แสดงผลในบรรทัดใหม่ */
+        font-size: 12px; /* กำหนดขนาดตัวอักษรให้เล็กลง */
+        color: #666; /* เปลี่ยนสีข้อความเป็นสีเทา */
     }
 
-    .badge {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        white-space: normal;
-        text-align: center;
-        padding: 8px;
+    .header {
+        height: 60px; /* ปรับความสูงของ .header เป็น 60px */
     }
+}
 
-    .badge p {
-        margin: 0;
-        padding-left: 5px;
-    }
+/* การกำหนดรูปแบบตาราง */
+table {
+    /* border-collapse: collapse; */
+    /* margin: 20px auto; */
+}
 
-    #tableTwo td {
-        background-color: #FFF5CD;
-        padding: 8px;
-        text-align: center;
-        width: 10px !important;
-    }
+/* กำหนดขนาดและรูปแบบของตาราง */
+#tableOne {
+    width: 100%; /* ทำให้ตารางมีความกว้าง 100% */
+    max-width: 800px; /* กำหนดความกว้างสูงสุดของตารางเป็น 800px */
+}
 
-    #tableTwo td:first-child {
-        background-color: #FFC000;
-        font-weight: normal;
-    }
+th, td {
+    border: 1px solid #ddd; /* เพิ่มเส้นขอบให้กับ <th> และ <td> */
+    padding: 8px; /* เพิ่มระยะห่างภายในเซลล์ตาราง */
+    text-align: center; /* จัดข้อความให้อยู่กลางเซลล์ */
+    width: 100px; /* กำหนดความกว้างของเซลล์เป็น 100px */
+}
 
-    #tableTwo input[type="number"] {
-        width: 80px;
-        margin: 0 auto;
-        text-align: center;
-    }
+th {
+    background-color: #f2f2f2; /* เปลี่ยนสีพื้นหลังของหัวตาราง */
+}
+
+/* กำหนดรูปแบบของ badge */
+.badge {
+    width: 100%; /* ทำให้ badge มีความกว้าง 100% */
+    display: flex; /* ใช้ flexbox ในการจัดตำแหน่ง */
+    align-items: center; /* จัดตำแหน่งให้อยู่กลางในแนวตั้ง */
+    white-space: normal; /* ทำให้ข้อความไม่ตัดคำ */
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+    padding: 8px; /* เพิ่มระยะห่างภายใน badge */
+}
+
+.badge p {
+    margin: 0; /* ลบระยะห่างใน <p> ของ badge */
+    padding-left: 5px; /* เพิ่มระยะห่างทางซ้ายใน <p> ของ badge */
+}
+
+/* รูปแบบของตารางที่สอง */
+#tableTwo td {
+    background-color: #6A5ACD; /* เปลี่ยนพื้นหลังของ <td> เป็นสีเหลืองอ่อน */
+    padding: 8px; /* เพิ่มระยะห่างภายในเซลล์ */
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+    width: 10px !important; /* กำหนดความกว้างของเซลล์เป็น 10px */
+}
+
+#tableTwo td:first-child {
+    background-color: #FFC000; /* เปลี่ยนพื้นหลังของเซลล์แรกเป็นสีเหลืองเข้ม */
+    font-weight: normal; /* ทำให้ตัวอักษรในเซลล์แรกเป็นปกติ */
+}
+
+/* การปรับรูปแบบสำหรับ input */
+#tableTwo input[type="number"] {
+    width: 80px; /* กำหนดความกว้างของ input เป็น 80px */
+    margin: 0 auto; /* จัดตำแหน่งให้อยู่กลาง */
+    text-align: center; /* จัดข้อความให้อยู่กลางใน input */
+    .fp__single_testimonial {
+    position: relative; /* ทำให้ปุ่มอยู่เหนือภาพ */
+}
+
+
+
+
 </style>
 @endsection
 
 @section('content')
 <section class="bg">
+     <!-- เพิ่มปุ่มเข้าสู่ระบบที่นี่ -->
+     <div class="d-flex justify-content-center mt-4">
+    <a href="http://127.0.0.1:8000/login" class="btn" style="background-color: yellow; color: white;">เข้าสู่ระบบ</a>
+</div>
+
     <!-- ส่วนของ Banner -->
     <section class="fp__testimonial_page_1" style="margin-top:130px;">
         <div class="container">
@@ -263,16 +268,26 @@
         </div>
     </section>
     <section class="fp__testimonial_page">
-        <div class="container d-flex justify-content-center align-items-center ">
+        <div class="container d-flex justify-content-center align-items-center">
             <div class="col-xl-12 col-md-12 col-lg-12 col-md-12 col-12" data-wow-duration="1s">
                 <div class="row">
                     <div class="col-xl-12">
-                        <img style="width:1500px important;" src="{{ asset('frontend/images/banner_2.png') }}">
+                        <img style="width:1500px !important;" src="{{ asset('frontend/images/banner_2.png') }}">
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class="fp__testimonial_page">
+    <div class="container d-flex justify-content-center align-items-center min-vh-75">
+        <div class="col-xl-12 col-md-12 col-lg-12 col-md-12 col-12" data-wow-duration="1s">
+            <div class="fp__single_testimonial">
+                <div class="fp__testimonial_header">
+                    <!-- ข้อความหรือส่วนอื่น ๆ ที่คุณต้องการ -->
+                </div>
+
+               
 
     <section class="fp__testimonial_page">
         <div class="container d-flex justify-content-center align-items-center min-vh-75">

@@ -12,8 +12,8 @@ class DataController extends Controller
      */
     public function index()
     {
-        $Count_Visitor = Visits::count();
-        return view ('admin.dashboard.index', compact('Count_Visitor'));
+       // $Count_Visitor = Visits::count();
+        return view ('admin.dashboard.index');
     }
 
     /**

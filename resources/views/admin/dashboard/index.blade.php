@@ -33,7 +33,6 @@
                             <h4>ประวัติการเข้าชมเว็ปไซต์ทั้งหมด</h4>
                         </div>
                         <div class="card-body">
-                            {{ $Count_Visitor }}
                         </div>
                     </div>
                 </div>

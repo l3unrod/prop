@@ -1,78 +1,36 @@
-{{-- <x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
-                autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
-                autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox"
-                    class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                href="{{ route('password.request') }}">
-                {{ __('Forgot your password?') }}
-            </a>
-            @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout> --}}
+{{-- Layout ที่ใช้เป็นแม่แบบสำหรับทุกหน้าของเว็บไซต์ --}}
 @extends('frontend.layouts.master')
 
+{{-- กำหนดชื่อหัวเรื่องของหน้า --}}
 @section('title', 'เข้าสู่ระบบ')
 
+{{-- ส่วนสำหรับการใส่ CSS --}}
 @section('css')
 <style>
 
 </style>
 @endsection
 
+{{-- เนื้อหาหลักของหน้าเข้าสู่ระบบ --}}
 @section('content')
+
 <!--=============================
         BREADCRUMB START
     ==============================-->
-<section class="fp__breadcrumb" style="background: url(images/counter_bg.jpg);">
+    <section class="fp__breadcrumb" style="background: url(images/counter_bg.jpg); background-color: #FFD700; background-size: 50%; height: 150px; position: relative;">
     <div class="fp__breadcrumb_overlay">
         <div class="container">
-            <div class="fp__breadcrumb_text">
-                <h1>sign in</h1>
+            <div class="fp__breadcrumb_text" style="color: black; position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%);">
+                <h1 style="color: black;">ลงชื่อเข้าใช้</h1>
                 <ul>
-                    <li><a href="index.html">home</a></li>
-                    <li><a href="#">sign in</a></li>
+                    <li><a href="index.html" style="color: black;">หน้าแรก</a></li>
+                    <li><a href="#" style="color: black;">ลงชื่อเข้าใช้</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
+
 <!--=============================
         BREADCRUMB END
     ==============================-->
@@ -80,57 +38,57 @@
 <!--=========================
         SIGNIN START
     ==========================-->
-<section class="fp__signin" style="background: url(images/login_bg.jpg);">
+    <section class="fp__signin" style="background: url(images/login_bg.jpg);">
     <div class="fp__signin_overlay pt_125 xs_pt_95 pb_100 xs_pb_70">
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1s">
                 <div class="col-xxl-5 col-xl-6 col-md-9 col-lg-7 m-auto">
                     <div class="fp__login_area">
-                        <h2>Welcome back!</h2>
-                        <p>sign in to continue</p>
+                        <h2>ยินดีต้อนรับ</h2> <!-- แสดงข้อความต้อนรับ -->
+                        <p>กรุณาเข้าสู่ระบบเพื่อดำเนินการต่อ</p> <!-- ข้อความบอกให้ล็อกอินเพื่อดำเนินการต่อ -->
+                        
+                        <!-- ฟอร์มสำหรับการเข้าสู่ระบบ -->
                         <form action="{{ route('login') }}" method="POST">
-                            @csrf
+                            @csrf <!-- ป้องกัน CSRF -->
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="fp__login_imput">
-                                        <label>email</label>
-                                        <input type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}" required>
+                                        <label>อีเมล</label> <!-- ป้ายชื่อสำหรับช่องกรอกอีเมล -->
+                                        <input type="email" id="email" name="email" placeholder="อีเมล" value="{{ old('email') }}" required>
                                     </div>
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="fp__login_imput">
-                                        <label>password</label>
-                                        <input type="password" placeholder="Password" name="password" required>
+                                        <label>รหัสผ่าน</label> <!-- ป้ายชื่อสำหรับช่องกรอกรหัสผ่าน -->
+                                        <input type="password" placeholder="รหัสผ่าน" name="password" required>
                                     </div>
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="fp__login_imput fp__login_check_area">
+                                        <!-- ตัวเลือกสำหรับ "Remember me" -->
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value=""
-                                                name="remember"
-                                                id="flexCheckDefault">
+                                                name="remember" id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">
-                                                Remeber Me
+                                                จดจำรหัสผ่าน
                                             </label>
                                         </div>
-                                        <a href="{{ route('password.request') }}">Forgot Password ?</a>
+                                        <a href="{{ route('password.request') }}">ลืมรหัสผ่าน ?</a> <!-- ลิงก์สำหรับการลืมรหัสผ่าน -->
                                     </div>
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="fp__login_imput">
-                                        <button type="submit" class="common_btn">login</button>
+                                        <button type="submit" class="common_btn">เข้าสู่ระบบ</button> <!-- ปุ่มเข้าสู่ระบบ -->
                                     </div>
                                 </div>
                             </div>
                         </form>
-                        <p class="or"><span>or</span></p>
-                        {{-- <ul class="d-flex">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                        </ul> --}}
-                        <p class="create_account">Dont’t have an aceount ? <a href="{{ route('register') }}">Create Account</a>
+                        
+                        <!-- ข้อความแยกออปชั่น เช่น ใช้บัญชีอื่นๆ -->
+                        <p class="or"><span>หรือ</span></p>
+                        
+                        <!-- ลิงก์สำหรับการสร้างบัญชีใหม่ -->
+                        <p class="create_account">ยังไม่มีบัญชีใช่ไหม? <a href="{{ route('register') }}">สร้างบัญชี</a>
                         </p>
                     </div>
                 </div>
@@ -142,5 +100,3 @@
         SIGNIN END
     ==========================-->
 @endsection
-
-
